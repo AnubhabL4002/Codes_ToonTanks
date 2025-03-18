@@ -21,6 +21,13 @@ protected:
 	void RotateTurret(FVector LookAtTarget);
 	void Fire();
 
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float ProjectileSpeed = 1500.f;  // Default speed
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float ProjectileGravityScale = 1.f;
+
 private:
 	UPROPERTY(VisibleAnywhere, Category = "My Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* CapsuleComp;
@@ -42,4 +49,5 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
+
 };

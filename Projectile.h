@@ -49,8 +49,14 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<class UCameraShakeBase> HitCameraShakeClass;
 
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	float CustomInitialSpeed = 1300.f;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void SetProjectileSpeed(float InSpeed);
+	void SetProjectileGravityScale(float InGravityScale);
 };

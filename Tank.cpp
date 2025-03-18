@@ -64,7 +64,7 @@ void ATank::BeginPlay()
 
 void ATank::Move(float Value)
 {
-	FVector DeltaLocation(0,0,0);
+	FVector DeltaLocation(0, 0, 0);
 	DeltaLocation.X = Value * Speed * UGameplayStatics::GetWorldDeltaSeconds(this);
 	AddActorLocalOffset(DeltaLocation, true);
 }

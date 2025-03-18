@@ -76,3 +76,21 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 	Destroy();
 }
 
+void AProjectile::SetProjectileSpeed(float InSpeed)
+{
+	CustomInitialSpeed = InSpeed;
+
+	if (ProjectileMovementComponent)
+	{
+		ProjectileMovementComponent->InitialSpeed = CustomInitialSpeed;
+		ProjectileMovementComponent->MaxSpeed = CustomInitialSpeed;
+	}
+}
+
+void AProjectile::SetProjectileGravityScale(float InGravityScale)
+{
+	if (ProjectileMovementComponent)
+	{
+		ProjectileMovementComponent->ProjectileGravityScale = InGravityScale;
+	}
+}
